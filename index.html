@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Calculate</title>
+</head>
+<body style="background-color: rgb(243, 240, 234);">  
+
+    <h1 align="center"><div style="background-color:gray;color:white;padding:05px"> CALCULATE INTEREST</h1>
+    <h3> 
+    <table border="2"  align="center">
+        
+        <tr>
+            <th></th>
+            <th>Simple Interest</th>
+            <th>Compound Interest</th>
+        </tr>
+        <tr>
+            <td>Principle Amount</td>
+            <td><input type="text" id="amt"</td>
+            <td><input type="text" id="amt1" </td>
+        </tr>
+        <tr>
+            <td>Rate Of Interest</td>
+            <td><input type="text" id="rat" </td>
+            <td><input type="text" id="rat1" </td>
+        </tr>
+        <tr>
+            <td>NO. of Years </td>
+            <td><input type="text" id="yrs" </td>
+            <td><input type="text" id="yrs1" </td>
+        </tr>
+        <tr>
+            <td>Rate of Compound per year</td>
+            <td></td>
+            <td><input type="text" id="cpyr" </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" value="Calculate" onclick="SimpleInterest()" </td>
+            <td><input type="button" value="Calculate" onclick="CompoundInterest()" </td>
+
+        </tr>
+        <tr>
+            <td>Answers</td>
+            <td><input type="text" id="SI" </td>
+            <td><input type="text" id="CI" </td>
+        </tr>
+        
+    </table>
+    </h3>
+    <script>
+        function SimpleInterest()
+        {
+            var p = eval(amt.value)
+            var r = eval(rat.value)
+            var t = eval(yrs.value)
+
+            SI.value = (p*r/100)*t
+        }
+
+        function CompoundInterest()
+        {
+            var p = eval(amt1.value)
+            var r = eval(rat1.value)
+            var t = eval(yrs1.value)
+            var n = eval(cpyr.value)
+            var r1 = r / 100
+            var nbr1 = r1 / n
+            var x = (1 + nbr1)
+            var nt = n * t
+            var e = Math.pow(x, nt)
+            CI.value = p * e
+        }
+    </script>
+</body>
+</html>
